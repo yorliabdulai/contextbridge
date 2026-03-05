@@ -1,21 +1,29 @@
 {
-  "name": "mcp-server",
+  "name": "@memorymesh/mcp-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --project tsconfig.json",
+    "build:watch": "tsc --watch",
+    "dev": "ts-node -r dotenv/config src/index.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.27.1",
-    "uuid": "^13.0.0"
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0",
+    "dotenv": "^16.0.0",
+    "uuid": "^9.0.0",
+    "zod": "^3.22.0"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.161",
-    "@types/uuid": "^10.0.0"
+    "@types/aws-lambda": "^8.10.0",
+    "@types/node": "^20.0.0",
+    "@types/uuid": "^9.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
   }
 }

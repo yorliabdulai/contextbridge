@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { MemoryMeshServer } from './server';
 
 async function main() {

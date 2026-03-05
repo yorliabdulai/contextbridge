@@ -1,20 +1,12 @@
 {
   "name": "contextbridge",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@aws-sdk/lib-dynamodb": "^3.1002.0",
-    "process": "^0.11.10"
-  },
-  "devDependencies": {
-    "@types/node": "^25.3.3"
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspace=packages/mcp-server"
   }
 }
