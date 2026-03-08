@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <span class="logo">⬡ MemoryMesh</span>
+    <span class="tagline">Portable AI Memory</span>
+  </div>
+
+  <div class="section">
+    <label>Your Memory ID</label>
+    <div class="input-row">
+      <span id="userId" class="user-id-display"></span>
+      <button id="copyUserId">Copy</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <label>Recent Memory</label>
+    <div id="contextOutput" class="output">Loading...</div>
+    <button id="syncBtn" class="sync-btn" disabled>⬡ Sync to Current AI</button>
+  </div>
+
+  <div class="section">
+    <label>Search Memory</label>
+    <div class="input-row">
+      <input type="text" id="searchQuery" placeholder="Search..." />
+      <button id="searchBtn">Search</button>
+    </div>
+    <div id="searchOutput" class="output hidden"></div>
+  </div>
+
+  <div id="statusBar" class="status-bar hidden"></div>
+  <div style="padding: 0 16px 12px;">
+  <button id="import-btn" style="
+    width:100%;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid #4a9eff44;
+    border-radius: 6px;
+    color: #4a9eff;
+    font-size: 12px;
+    cursor: pointer;
+  ">⬆ Import AI History (ChatGPT, Claude...)</button>
+</div>
+  <script src="popup.js"></script>
+</body>
+</html>

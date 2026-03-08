@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MemoryMesh — Import History</title>
+  <link rel="stylesheet" href="import.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="logo">⬡ MemoryMesh</span>
+      <h1>Import AI History</h1>
+      <p>Bulk import your conversation history from ChatGPT, Claude, or other AI tools into your portable memory.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <strong>Export your data</strong>
+          <span>ChatGPT: Settings → Data Controls → Export Data. You'll receive a ZIP file by email.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <strong>Drop your ZIP below</strong>
+          <span>MemoryMesh will parse your conversations and summarize them using AI.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <strong>Sync anywhere</strong>
+          <span>Your history is now available to inject into Claude, Gemini, or any AI tool.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="upload-area" id="drop-zone">
+      <div class="upload-icon">📦</div>
+      <p>Drop your ChatGPT export ZIP here</p>
+      <span>or</span>
+      <label for="file-input" class="file-label">Choose File</label>
+      <input type="file" id="file-input" accept=".zip" style="display:none;" />
+      <p class="file-hint">Supports: ChatGPT export ZIP and Claude data.zip</p>
+    </div>
+
+    <div id="progress-section" class="progress-section hidden">
+      <div class="progress-header">
+        <span id="progress-title">Parsing conversations...</span>
+        <span id="progress-count">0 / 0</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div id="progress-log" class="progress-log"></div>
+    </div>
+
+    <div id="success-section" class="success-section hidden">
+      <div class="success-icon">✅</div>
+      <h2 id="success-title">Import Complete!</h2>
+      <p id="success-body">Your conversations have been imported into MemoryMesh.</p>
+      <button id="done-btn" class="done-btn">Open MemoryMesh Popup</button>
+    </div>
+
+    <div id="error-section" class="error-section hidden">
+      <div class="error-icon">❌</div>
+      <p id="error-message">Something went wrong.</p>
+      <button id="retry-btn" class="retry-btn">Try Again</button>
+    </div>
+  </div>
+  <script src="import.js"></script>
+</body>
+</html>
